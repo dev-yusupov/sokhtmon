@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% block content %}
+
+	<div class="container p-2">
+		<div class="row justify-content-between">
+			<div class="col-md-6 offset-md-3" style="text-align: center;">
+				<h1>Панель Администратора</h1>
+			</div>
+		</div>
+		<div class="add-product-btn mt-4">
+			<a href="{% url 'add_product' %}" class="btn btn-primary">Добавить Продукт</a>
+			<a href="{% url 'password-change' %}" class="btn btn-warning">Изменит Пароль</a>
+			<a href="{% url 'currency' %}" class="btn btn-danger">Изменить Валюта</a>
+		</div>
+	</div>
+
+	<div class="products p-5">
+		<div class="row">
+			{% for product in products %}
+			<div class="col p-5 justify-content-center">
+				<div class="card" style="width: 18rem;">
+		  			<img src="{{ product.cover.url }}" class="card-img-top" alt="">
+		  			<div class="card-body">
+		    			<h5 class="card-title fw-bold">{{ product.title }}</h5>
+		    			<div class="d-flex flex-row justify-content-between mt-4 mb-3">
+			   				<h5 class="fw-bold">Размер:</h5>
+			    			<h5 class="card-text fw-bold">{{ product.size }}</h5>
+			    		</div>
+		    			<div class="d-flex flex-row justify-content-between mt-4 mb-3">
+		    				<p class="fw-bold">Цена:</p>
+		    				{% if product.ruble %}
+		    					<p class="card-text fw-bold">{{ currency|mul:product.price|div:1000 }}<span>сомони</span></p>
+		    				{% else %}
+		    					<p class="card-text fw-bold">{{ product.price }}<span>сомони</span></p>
+		    				{% endif %}
+		    			</div>
+			    		<div class="row align-items-end justify-content-center">
+			    			<div class="col">
+			    				<a href="{% url 'product_info' product.pk %}">Подробнее</a>
+			    			</div>
+			    			<div class="col">
+						    	<form method="POST" action="{% url 'delete_product' product.pk %}">
+						    		{% csrf_token %}
+						    		<button href="" type="submit" class="btn btn-danger">Удалить</button>
+						    	</form>
+							</div>
+						</div>
+		    		</div>	
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

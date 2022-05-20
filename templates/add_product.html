@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="p-4 container row col-md-6 offset-md-3 mt-5 add-product">
+	<h1>Добавить Продукт</h1>
+	<form method="post" enctype="multipart/form-data" class="myform">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button type="submit" class="btn btn-primary mt-4">Добавить Продукт</button>
+	</form>
+</div>
+{% endblock %}

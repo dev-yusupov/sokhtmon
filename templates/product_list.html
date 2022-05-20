@@ -1,0 +1,16 @@
+<h1>Products</h1>
+
+{% for product in products %}
+
+<div>
+	<img src="{{ product.cover.url }}">
+	<h2>{{ product.title }}</h2>
+	<p>{{ product.size }}</p>
+	<p>{{ product.price }}</p>
+	<form method="POST" action="{% url 'delete_product' product.pk %}">
+		{% csrf_token %}
+		<button type="submit">Submit</button>
+	</form>
+</div>
+
+{% endfor %}

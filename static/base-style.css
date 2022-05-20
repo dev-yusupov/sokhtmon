@@ -1,0 +1,95 @@
+.card {
+	width: 90%;
+}
+.card img {
+	height: 200px;
+}
+.add-product {
+	-webkit-box-shadow: 1px 4px 48px 10px rgba(0,0,0,0.39); 
+			box-shadow: 1px 4px 48px 10px rgba(0,0,0,0.39);
+}
+.myform input {
+	outline: none;
+	width: 90%;
+	padding: 10px 15px;
+}
+.myform textarea {
+	resize: none;
+}
+
+.img-carousel {
+	height: 30em;
+}
+.title {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.title h1 {
+	font-size: 45px!important;
+}
+.contact-item {
+	border: 1px solid rgba(211, 211, 211, 0.623);
+	width: 500px;
+	color: #0d6efd;
+}
+
+.footer {
+	border-top: 1px solid rgba(211, 211, 211, 0.623);
+	text-align: center;
+	bottom: 0;
+}
+@media (max-width: 800px) {
+	.card {
+		width: 90%;
+	}
+	.card img {
+		height: 200px;
+	}
+	.add-product {
+		-webkit-box-shadow: 1px 4px 48px 10px rgba(0,0,0,0.39); 
+				box-shadow: 1px 4px 48px 10px rgba(0,0,0,0.39);
+	}
+	.myform input {
+		outline: none;
+		width: 90%;
+		padding: 10px 15px;
+	}
+
+	.img-carousel {
+		height: 80%;
+	}
+	.title {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.title h1 {
+		font-size: 120%!important;
+	}
+	.contact-item {
+		border: 1px solid rgba(211, 211, 211, 0.623);
+		width: 80%;
+		color: #0d6efd;
+	}
+	.contact h5 {
+		font-size: 80%;
+	}
+	.add-product-btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer {
+		border-top: 1px solid rgba(211, 211, 211, 0.623);
+		text-align: center;
+		bottom: 0;
+	}	
+}
+
+span {
+	color: red;
+}
